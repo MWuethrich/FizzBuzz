@@ -1,18 +1,19 @@
 using FizzBuzz.Impl;
 using FluentAssertions;
 using Xunit;
+using Console = FizzBuzz.Impl.Console;
 
 namespace FizzBuzz;
 
 public class FizzBuzzerTest
 {
     private readonly FizzBuzzer _fizzBuzzer;
-    private readonly ConsoleWrapper _consoleWrapper;
+    private readonly Console _console;
 
     public FizzBuzzerTest()
     {
-        _consoleWrapper = new ConsoleWrapper();
-        _fizzBuzzer = new FizzBuzzer(_consoleWrapper);
+        _console = new Console();
+        _fizzBuzzer = new FizzBuzzer(_console);
     }
 
     [Fact]
@@ -20,7 +21,7 @@ public class FizzBuzzerTest
     {
         _fizzBuzzer.FizzBuzz(2);
 
-        _consoleWrapper.ReadAll().Should().Be("""
+        _console.ReadAll().Should().Be("""
                                               1
                                               2
                                               """);
@@ -31,7 +32,7 @@ public class FizzBuzzerTest
     {
         _fizzBuzzer.FizzBuzz(3);
 
-        _consoleWrapper.ReadAll().Should().Be("""
+        _console.ReadAll().Should().Be("""
                                               1
                                               2
                                               Fizz
@@ -43,7 +44,7 @@ public class FizzBuzzerTest
     {
         _fizzBuzzer.FizzBuzz(5);
 
-        _consoleWrapper.ReadAll().Should().Be("""
+        _console.ReadAll().Should().Be("""
                                               1
                                               2
                                               Fizz
@@ -57,7 +58,7 @@ public class FizzBuzzerTest
     {
         _fizzBuzzer.FizzBuzz(15);
 
-        _consoleWrapper.ReadAll().Should().Be("""
+        _console.ReadAll().Should().Be("""
                                               1
                                               2
                                               Fizz

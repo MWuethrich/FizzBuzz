@@ -1,7 +1,7 @@
 ﻿using FizzBuzz;
-using FizzBuzz.Impl;
+using Console = FizzBuzz.Impl.Console;
 
-ConsoleWrapper console = new ConsoleWrapper();
+Console console = new Console();
 
 int rest = 4 % 3;
 console.WriteLine("Ein Rest wird mit '%' gerechnet: 4 durch 3 gibt Rest " + rest);

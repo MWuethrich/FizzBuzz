@@ -4,9 +4,9 @@ namespace FizzBuzz;
 
 public class FizzBuzzer
 {
-    private readonly IConsoleWrapper _console;
+    private readonly IConsole _console;
 
-    public FizzBuzzer(IConsoleWrapper console)
+    public FizzBuzzer(IConsole console)
     {
         _console = console;
     }
